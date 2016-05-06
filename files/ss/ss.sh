@@ -2,6 +2,8 @@
 
 arch=`uname -m`
 
+rm -rf shadowsocks-server
+
 if [ $arch = "x86_64" ]
 then
 	wget http://cnlangzi.github.io/files/ss/x64/shadowsocks-server
