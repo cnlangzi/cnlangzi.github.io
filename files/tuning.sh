@@ -2,6 +2,9 @@
 
 
 
+sed -i '/^net.ipv4.ip_forward/ d' /etc/sysctl.conf
+echo "net.ipv4.ip_forward=1" >>/etc/sysctl.conf
+
 # 系统所有进程一共可以打开的文件数量， 每个套接字也占用一个文件描述字
 sed -i '/^fs.file-max/ d' /etc/sysctl.conf
 echo "fs.file-max = 1491124" >>/etc/sysctl.conf
