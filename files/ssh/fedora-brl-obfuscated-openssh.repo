@@ -1,0 +1,15 @@
+# Place this file in your /etc/yum.repos.d/ directory
+
+[fedora-brl-obfuscated-openssh]
+name=Free version of the SSH connectivity tools, with obfuscated path
+baseurl=http://repos.fedorapeople.org/repos/hedayat/brl-obfuscated-openssh/fedora-$releasever/$basearch/
+enabled=1
+skip_if_unavailable=1
+gpgcheck=0
+
+[fedora-brl-obfuscated-openssh-source]
+name=Free version of the SSH connectivity tools, with obfuscated path - Source
+baseurl=http://repos.fedorapeople.org/repos/hedayat/brl-obfuscated-openssh/fedora-$releasever/SRPMS
+enabled=0
+skip_if_unavailable=1
+gpgcheck=0

@@ -119,5 +119,8 @@ echo "net.ipv4.tcp_mtu_probing=1" >>/etc/sysctl.conf
 
 sysctl -p
 
-echo "*	hard	nofile	65535" > /etc/security/limits.conf
-echo "*	soft	nofile	65535" >> /etc/security/limits.conf
+
+echo "root soft nofile 65535" > /etc/security/limits.conf
+echo "root hard nofile 65535" >> /etc/security/limits.conf
+echo "* soft nofile 65535" >> /etc/security/limits.conf
+echo "* hard nofile 65535" >> /etc/security/limits.conf
