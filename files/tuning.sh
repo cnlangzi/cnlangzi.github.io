@@ -125,12 +125,8 @@ echo "root hard nofile 65535" >> /etc/security/limits.conf
 echo "* soft nofile 65535" >> /etc/security/limits.conf
 echo "* hard nofile 65535" >> /etc/security/limits.conf
 
-ulimit -u 65536
-ulimit -n 65536
-ulimit -d unlimited
-ulimit -m unlimited
-ulimit -s unlimited
-ulimit -t unlimited
-ulimit -v unlimited
+echo "ulimit -u 65536" >> /etc/profile
+echo "ulimit -n 65536" >> /etc/profile
+
 
 source /etc/profile
