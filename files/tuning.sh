@@ -120,10 +120,12 @@ echo "net.ipv4.tcp_mtu_probing=1" >>/etc/sysctl.conf
 sysctl -p
 
 
-echo "root soft nofile 65535" > /etc/security/limits.conf
-echo "root hard nofile 65535" >> /etc/security/limits.conf
-echo "* soft nofile 65535" >> /etc/security/limits.conf
-echo "* hard nofile 65535" >> /etc/security/limits.conf
+echo "root	soft	nofile	65535" > /etc/security/limits.conf
+echo "root	hard	nofile	65535" >> /etc/security/limits.conf
+echo "*	soft	noproc	65535" >> /etc/security/limits.conf
+echo "*	hard	noproc	65535" >> /etc/security/limits.conf
+echo "*	soft	nofile	65535" >> /etc/security/limits.conf
+echo "*	hard	nofile	65535" >> /etc/security/limits.conf
 
 echo "ulimit -u 65536" >> /etc/profile
 echo "ulimit -n 65536" >> /etc/profile
