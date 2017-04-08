@@ -3,6 +3,7 @@ time=0
 while true 
 do  
 	sleep 20
+
         let time=$time+20
         if [ "$time" -eq 1800 ];then
 	      service shadowsocks-server restart &
@@ -11,8 +12,8 @@ do
 	      continue
 	fi 
    
-        ss_count=$(pgrep -f "shadowsocks-server" | grep -v grep | wc -l)  
-	if [ "\ss_count" -eq "0" ];then  
+    ss_count=$(pgrep -f "shadowsocks-server" | grep -v grep | wc -l)  
+	if [ "$ss_count" -eq "0" ];then  
             logger -i "stopped" -t "ss_server"   
 	    service shadowsocks-server restart &
             continue  
@@ -25,4 +26,5 @@ do
             logger -i "stopped" -t "ss_server has dead locked" 
             service shadowsocks-server restart &
        fi   
-done    
+done  
+
